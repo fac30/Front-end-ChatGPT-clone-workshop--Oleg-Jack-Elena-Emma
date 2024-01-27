@@ -67,12 +67,12 @@ function sendToOpenAI_pre(event) {
 };
 
 
-function saveApi(event) {
-    event.preventDefault();
-    // we'll add stuff to hide the input area later?
-    apiKey = document.getElementById("apiKey").value;  
-    console.log(apiKey); 
-}
+// function saveApi(event) {
+//     event.preventDefault();
+//     // we'll add stuff to hide the input area later?
+//     apiKey = document.getElementById("apiKey").value;  
+//     console.log(apiKey); 
+// }
 
 document.getElementById("apiSubmit").addEventListener("click", saveApi);
 
