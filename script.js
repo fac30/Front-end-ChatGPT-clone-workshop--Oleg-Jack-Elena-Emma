@@ -1,8 +1,20 @@
+<<<<<<< Updated upstream
 let apiKey = ""; 
 const endpoint = 'https://api.openai.com/v1/chat/completions'; 
+=======
+let apiKey = '';
+>>>>>>> Stashed changes
 
-const prompt = 'we need a function to link the data?';
+function sendToOpenAI(userInput) {
+  // Ensure apiKey is not empty
+  if (!apiKey) {
+    console.error('API key is not set.');
+    alert('set API key first!');
+    document.getElementById('user-text-placeholder').innerText = '';
+    return;
+  }
 
+<<<<<<< Updated upstream
 function saveApi(event) {
     event.preventDefault();
     // we'll add stuff to hide the input area later?
@@ -12,22 +24,70 @@ function saveApi(event) {
 document.getElementById("apiSubmit").addEventListener("click", saveApi);
 
 // currently have no idea what the stuff below does
+=======
+  // API URL
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
-// const data = {
-//   prompt: prompt,
-//   max_tokens: 150  // You can adjust this parameter based on your requirements
-// };
+  // Data to be sent in the request body
+  const data = {
+    model: 'gpt-3.5-turbo', // Specify the model here
+    messages: [
+      {
+        role: 'system',
+        content: 'You are a helpful assistant.',
+      },
+      {
+        role: 'user',
+        content: userInput,
+      },
+    ],
+  };
 
-// fetch(endpoint, {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Authorization': `Bearer ${apiKey}`
-//   },
-//   body: JSON.stringify(data)
-// })
-//   .then(response => response.json())
-//   .then(result => {
-//     console.log(result.choices[0].text);  // The generated response from GPT
-//   })
-//   .catch(error => console.error('Error:', error));
+  // Fetch options
+  const fetchOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(data),
+  };
+
+  // Send request to OpenAI API
+  fetch(apiUrl, fetchOptions)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      // Process the response here
+      // For example, display the response in the HTML
+      document.getElementById(
+        'response-placeholder'
+      ).innerText = `chat-GPT: ${data.choices[0].message.content}`;
+    })
+    .catch((error) => {
+      console.error('Error fetching data: ', error);
+    });
+}
+
+document.getElementById('button').onclick = function () {
+  let text = document.getElementById('chatGPT').value;
+  document.getElementById('user-text-placeholder').innerText = `user: ${text}`;
+  sendToOpenAI(text);
+};
+>>>>>>> Stashed changes
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById('apiform').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevents the default form submission action
+
+    apiKey = document.getElementById('apiKey').value;
+    document.getElementById('apiKey').value = 'Got the key!';
+
+    console.log(apiKey);
+  });
+});
