@@ -1,16 +1,15 @@
-const apiKey = saveApi(); 
+let apiKey = ""; 
 const endpoint = 'https://api.openai.com/v1/chat/completions'; 
 
 const prompt = 'we need a function to link the data?';
 
-function saveApi() {
-    console.log("save api");
+function saveApi(event) {
+    event.preventDefault();
     // we'll add stuff to hide the input area later?
-    // console.log(document.getElementById("apiKey"));
-    let newApi = document.getElementById("apiKey").value;
-    console.log(newApi)
-    return newApi;
+    apiKey = document.getElementById("apiKey").value;   
 }
+
+document.getElementById("apiSubmit").addEventListener("click", saveApi);
 
 // currently have no idea what the stuff below does
 
