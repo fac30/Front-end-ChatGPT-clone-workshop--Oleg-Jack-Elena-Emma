@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatGPT Clone</title>
+    <script defer src="script.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -112,7 +113,7 @@
         <fieldset>
             <label for="apiKey">Add your API key:</label>
             <input type="text" id="apiKey" name="apiKey" required>
-            <button type="submit" onclick="">add apiKey</button>
+            <button id="apiSubmit" type="submit" onsubmit="saveApi(event)">add apiKey</button>
         </fieldset>
     </form>
     <form id="inputform">
