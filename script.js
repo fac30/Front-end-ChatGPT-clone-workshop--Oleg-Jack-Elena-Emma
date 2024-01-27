@@ -1,8 +1,11 @@
-const apiKey = 'need function to track api key?'; 
+const apiKey = saveApi(); 
 const endpoint = 'https://api.openai.com/v1/chat/completions'; 
 
 const prompt = 'we need a function to link the data?';
 
+function saveApi(params) {
+    return
+}
 
 // currently have no idea what the stuff below does
 
