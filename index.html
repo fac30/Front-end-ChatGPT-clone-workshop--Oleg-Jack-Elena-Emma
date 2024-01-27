@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatGPT Clone</title>
-    <script defer src="script.js"></script>
+    <!-- <script defer src="script.js"></script> -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -124,8 +124,9 @@
     <form id="inputform">
         <fieldset>
             <label for="chatGPT">Enter your question:</label>
+            <p id="response-placeholder">testing</p>
             <textarea id="chatGPT" name="question" required></textarea>
-            <button type="submit">Search</button>
+            <button id="button" type="submit">Search</button>
         </fieldset>
         <div class="result"></div>
     </form>
@@ -179,5 +180,6 @@
         resultDiv.textContent = "Result: " + question;
     }
 </script>
+<script src="script.js"></script>
 
 </html>
