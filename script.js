@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
 let apiKey = ""; 
 const endpoint = 'https://api.openai.com/v1/chat/completions'; 
-=======
-let apiKey = '';
->>>>>>> Stashed changes
 
 function sendToOpenAI(userInput) {
   // Ensure apiKey is not empty
@@ -14,7 +10,6 @@ function sendToOpenAI(userInput) {
     return;
   }
 
-<<<<<<< Updated upstream
 function saveApi(event) {
     event.preventDefault();
     // we'll add stuff to hide the input area later?
@@ -24,7 +19,6 @@ function saveApi(event) {
 document.getElementById("apiSubmit").addEventListener("click", saveApi);
 
 // currently have no idea what the stuff below does
-=======
   // API URL
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
@@ -79,7 +73,6 @@ document.getElementById('button').onclick = function () {
   document.getElementById('user-text-placeholder').innerText = `user: ${text}`;
   sendToOpenAI(text);
 };
->>>>>>> Stashed changes
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('apiform').addEventListener('submit', function (e) {
