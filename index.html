@@ -30,6 +30,10 @@
             
         }
 
+        #apiform {
+            display: none;
+        }
+
         h1 {
             color: #333;
             margin-bottom: 20px;
@@ -71,7 +75,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            width: 100%;
+            width: 300px;
         }
 
         button:hover {
@@ -108,13 +112,14 @@
 
 <body>
     <h1>ChatGPT</h1>
-    <form id="apiform">
+    <form id="apiform" onsubmit="addApiKey(event)">
         <fieldset>
             <label for="apiKey">Add your API key:</label>
             <input type="text" id="apiKey" name="apiKey" required>
             <button type="submit" onclick="">add apiKey</button>
         </fieldset>
     </form>
+    <button onclick="deleteApiKey()">Delete API Key</button>
     <form id="inputform">
         <fieldset>
             <label for="chatGPT">Enter your question:</label>
@@ -124,6 +129,54 @@
         <div class="result"></div>
     </form>
 </body>
-<script></script>
+<script>
+    var apiKeyValue = localStorage.getItem('apiKey') || "";
+
+    // Function to hide the API form
+    function hideApiForm() {
+        document.getElementById('apiform').style.display = 'none';
+    }
+
+    function addApiKey(event) {
+        event.preventDefault(); // Prevents the form from submitting in the traditional way
+
+        // Get the API key from the input field
+        apiKeyValue = document.getElementById('apiKey').value;
+
+        // Store the API key in localStorage
+        localStorage.setItem('apiKey', apiKeyValue);
+
+        // Use the API key as needed (e.g., store it, make API calls, etc.)
+
+        console.log("API Key added:", apiKeyValue);
+
+        // Hide the API form after submission
+        hideApiForm();
+    }
+
+    function deleteApiKey() {
+            // Remove the API key from localStorage
+            localStorage.removeItem('apiKey');
+
+            // Show the API form
+            document.getElementById('apiform').style.display = 'block';
+        }
+
+    function searchQuestion(event) {
+        event.preventDefault(); // Prevents the form from submitting in the traditional way
+
+        // Get the question from the textarea
+        var question = document.getElementById('chatGPT').value;
+
+        // Use the question as needed (e.g., make API calls, process it, etc.)
+
+        // Display the result (for demonstration purposes, let's log it to the console)
+        console.log("Search Result:", question);
+
+        // You can also update the DOM to display the result in a specific area
+        var resultDiv = document.querySelector('.result');
+        resultDiv.textContent = "Result: " + question;
+    }
+</script>
 
 </html>
