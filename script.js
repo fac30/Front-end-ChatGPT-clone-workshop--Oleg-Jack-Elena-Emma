@@ -1,6 +1,9 @@
 let apiKey = ""; 
 const endpoint = 'https://api.openai.com/v1/chat/completions'; 
 
+// API management
+
+
 function sendToOpenAI(userInput) {
   // Ensure apiKey is not 
   if (!apiKey) {
@@ -9,10 +12,6 @@ function sendToOpenAI(userInput) {
     //document.getElementById('user-text-placeholder').innerText = '';
     return;
   }
-// currently have no idea what the stuff below does
-// API URL
-    const apiUrl = 'https://api.openai.com/v1/chat/completions';
-
     // Data to be sent in the request body
     const data = {
         model: 'gpt-3.5-turbo', // Specify the model here
@@ -39,7 +38,7 @@ function sendToOpenAI(userInput) {
     };
 
     // Send request to OpenAI API
-    fetch(apiUrl, fetchOptions)
+    fetch(endpoint, fetchOptions)
         .then((response) => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
