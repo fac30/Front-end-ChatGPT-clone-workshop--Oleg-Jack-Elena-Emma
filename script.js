@@ -3,8 +3,11 @@ const endpoint = 'https://api.openai.com/v1/chat/completions';
 
 const prompt = 'we need a function to link the data?';
 
-function saveApi(params) {
-    return
+function saveApi() {
+    // we'll add stuff to hide the input area later?
+    // console.log(document.getElementById("apiKey"));
+    let newApi = document.getElementById("apiKey");
+    return newApi;
 }
 
 // currently have no idea what the stuff below does
