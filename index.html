@@ -120,7 +120,7 @@
             <button id="apiSubmit" type="submit" onsubmit="saveApi(event)">add apiKey</button>
         </fieldset>
     </form>
-    <button onclick="deleteApiKey()">Delete API Key</button>
+    <button onclick="manageApiKey()">Manage API Key</button>
     <form id="inputform">
         <fieldset>
             <label for="chatGPT">Enter your question:</label>
@@ -155,7 +155,7 @@
         hideApiForm();
     }
 
-    function deleteApiKey() {
+    function manageApiKey() {
             // Remove the API key from localStorage
             localStorage.removeItem('apiKey');
 
