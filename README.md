@@ -1,6 +1,9 @@
 
 <img width="1000" alt="Screenshot 2024-01-28 at 17 17 24" src="https://github.com/fac30/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/assets/113034133/4d8fb23f-d128-4eb4-b661-fc9cfcd55ea7">
 
+<br>
+
+[](https://github.com/fac30/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/blob/main/olegs_index.html)
 
 ## Front-end ChatGpt clone for FAC unschool workshop
 
