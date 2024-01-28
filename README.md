@@ -3,7 +3,7 @@
 
 <br><br>
 
-**[link to source code](https://github.com/fac30/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/blob/main/olegs_index.html)**
+**[link to the source code](https://github.com/fac30/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/blob/main/olegs_index.html)**
 
 <br>
 
