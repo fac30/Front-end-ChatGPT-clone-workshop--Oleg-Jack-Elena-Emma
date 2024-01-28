@@ -3,7 +3,9 @@
 
 <br>
 
-[link](https://github.com/fac30/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/blob/main/olegs_index.html)
+**[link to source code](https://github.com/fac30/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/blob/main/olegs_index.html)**
+
+<br>
 
 ## Front-end ChatGpt clone for FAC unschool workshop
 
