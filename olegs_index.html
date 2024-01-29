@@ -40,7 +40,7 @@
         }
 
         li {
-            text-align: left;
+            text-align: justify;
             
         }
 
@@ -216,9 +216,19 @@
         function makeChatGPTApiCall(question) {
             var apiUrl = 'https://api.openai.com/v1/chat/completions';
             var apiKey = localStorage.getItem('apiKey');
-    
-            // apiUrl += '?timestamp=' + new Date().getTime();
-    
+
+            // Create the messages array using the existing conversation history
+            var messages = questionHistory.map(entry => ({
+                role: 'system',
+                content: 'You are a helpful assistant.',
+            }, {
+                role: 'user',
+                content: entry.question,
+            }));
+
+            // Add the current user question to the messages array
+            messages.push({ role: 'user', content: question });
+
             return fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -226,10 +236,7 @@
                     'Authorization': 'Bearer ' + apiKey,
                 },
                 body: JSON.stringify({
-                    messages: [
-                        { role: 'system', content: 'You are a helpful assistant.' },
-                        { role: 'user', content: question }
-                    ],
+                    messages: messages, // Use the existing conversation history
                     model: 'gpt-3.5-turbo',
                 }),
             })
@@ -247,6 +254,7 @@
                 });
             });
         }
+
     
         function clearHistory() {
             console.log('Clear History function invoked');
