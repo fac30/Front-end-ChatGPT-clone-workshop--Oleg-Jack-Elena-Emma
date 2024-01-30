@@ -71,7 +71,7 @@ Certainly! Let's go into more detail about the `<script>` part of your HTML file
 
 ---
 
-Explanation of key parts of the script:
+### Explanation of key parts of the JavaScript:
 
 - **Global Variables:** `apiKeyValue` and `questionHistory` are global variables to store the API key and question history. They are initialized based on the values stored in LocalStorage.
 
