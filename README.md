@@ -1,6 +1,6 @@
 ## Front-end ChatGpt clone for FAC unschool workshop
 
-### Final result
+### Final result:
 
 <br>
 
