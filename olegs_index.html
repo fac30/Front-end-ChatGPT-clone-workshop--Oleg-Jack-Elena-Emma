@@ -160,6 +160,7 @@
         <!--<div class="result"></div> -->
     </form>
     <script>
+        // Global variables to store API key and question history
         var apiKeyValue = localStorage.getItem('apiKey') || "";
         var questionHistory = JSON.parse(localStorage.getItem('questionHistory')) || [];
     
@@ -168,6 +169,7 @@
             document.getElementById('apiform').style.display = 'none';
         }
     
+        // Function to add API key
         function addApiKey(event) {
             event.preventDefault();
             apiKeyValue = document.getElementById('apiKey').value;
@@ -176,23 +178,27 @@
             hideApiForm();
         }
     
+        // Function to delete API key
         function deleteApiKey() {
             localStorage.removeItem('apiKey');
             document.getElementById('apiform').style.display = 'block';
         }
     
+        // Function to search and display the response to a user's question
         function searchQuestion(event) {
             event.preventDefault();
             var question = document.getElementById('chatGPT').value;
             var apiKey = localStorage.getItem('apiKey');
+            
+            // Check if API key is present
             if (!apiKey) {
                 alert("Please add your API key first.");
                 return;
             }
+    
+            // Make API call to OpenAI GPT-3.5
             makeChatGPTApiCall(question)
                 .then(response => {
-                    // var resultDiv = document.querySelector('.result');
-                    // resultDiv.textContent = "Result: " + response.choices[0].message.content;
                     updateQuestionHistory(question, response.choices[0].message.content);
                 })
                 .catch(error => {
@@ -201,6 +207,7 @@
                 });
         }
     
+        // Function to update the question history and display on the UI
         function updateQuestionHistory(question, answer) {
             var questionItem = document.createElement('li');
             var answerItem = document.createElement('li');
@@ -213,10 +220,11 @@
             localStorage.setItem('questionHistory', JSON.stringify(questionHistory));
         }
     
+        // Function to make API call to OpenAI GPT-3.5
         function makeChatGPTApiCall(question) {
             var apiUrl = 'https://api.openai.com/v1/chat/completions';
             var apiKey = localStorage.getItem('apiKey');
-
+    
             // Create the messages array using the existing conversation history
             var messages = questionHistory.map(entry => ({
                 role: 'system',
@@ -225,10 +233,10 @@
                 role: 'user',
                 content: entry.question,
             }));
-
+    
             // Add the current user question to the messages array
             messages.push({ role: 'user', content: question });
-
+    
             return fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -254,16 +262,16 @@
                 });
             });
         }
-
     
+        // Function to clear the question history
         function clearHistory() {
-            console.log('Clear History function invoked');
             localStorage.removeItem('questionHistory');
             var questionList = document.getElementById('questionList');
             questionList.innerHTML = "";
             questionHistory = [];
         }
     
+        // Function to check the API key status and adjust the display
         function checkApiKeyStatus() {
             apiKeyValue = localStorage.getItem('apiKey') || "";
             var apiform = document.getElementById('apiform');
@@ -274,7 +282,7 @@
             }
         }
     
-        // Immediately run this function
+        // Immediately run functions on page load
         (function () {
             checkApiKeyStatus();
             displayQuestionHistory();
@@ -286,6 +294,7 @@
             clearHistory();
         });
     
+        // Function to display the existing question history on the UI
         function displayQuestionHistory() {
             var questionList = document.getElementById('questionList');
             questionHistory.forEach(entry => {
