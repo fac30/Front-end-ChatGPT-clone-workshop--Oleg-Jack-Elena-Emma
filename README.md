@@ -9,6 +9,8 @@
 
 <br>
 
+---
+
 ## Front-end ChatGpt clone for FAC unschool workshop
 
 ### User stories
