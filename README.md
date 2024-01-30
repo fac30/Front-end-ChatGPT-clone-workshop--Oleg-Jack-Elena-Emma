@@ -51,7 +51,7 @@ We created an HTML file for a web page that implements a simple chat interface u
 
 4. **API Interaction:**
    - The OpenAI GPT-3.5 API is used to generate responses to user questions.
-   - The `makeChatGPTApiCall` function constructs the API request, including messages from the conversation history.
+   - The `makeChatGPTApiCall` function constructs the API request, **including messages from the conversation history**.
    - The conversation history is stored in the `questionHistory` variable, which is updated as users interact with the chat.
 
 5. **LocalStorage Usage:**
