@@ -67,4 +67,4 @@ We created an HTML file for a web page that implements a simple chat interface u
 8. **Responsiveness:**
    - The page layout is designed to be responsive, adjusting its appearance for smaller screens using media queries.
 
-> [! NOTE] Keep in mind that the actual API endpoint and key handling should be implemented securely in a production environment.
+> [ !NOTE ] Keep in mind that the actual API endpoint and key handling should be implemented securely in a production environment.
