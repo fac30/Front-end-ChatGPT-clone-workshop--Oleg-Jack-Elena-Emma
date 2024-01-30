@@ -7,8 +7,6 @@
 
 **[link to the deployed app on github pages](https://fac30.github.io/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/olegs_index.html)**
 
-<br>
-
 ---
 
 ## Front-end ChatGpt clone for FAC unschool workshop
