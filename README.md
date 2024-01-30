@@ -67,8 +67,6 @@ We created an HTML file for a web page that implements a simple chat interface u
 8. **Responsiveness:**
    - The page layout is designed to be responsive, adjusting its appearance for smaller screens using media queries.
   
-Certainly! Let's go into more detail about the `<script>` part of your HTML file. The JavaScript code in this section handles the functionality of your chat interface and interacts with the OpenAI GPT-3.5 API.
-
 ---
 
 ### Explanation of key parts of the JavaScript:
