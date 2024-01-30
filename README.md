@@ -71,6 +71,8 @@ We created an HTML file for a web page that implements a simple chat interface u
 
 ### Explanation of key parts of the JavaScript:
 
+The JavaScript code handles the main functionality of your chat interface, including API interactions, updating the UI, and managing the question history.
+
 - **Global Variables:** `apiKeyValue` and `questionHistory` are global variables to store the API key and question history. They are initialized based on the values stored in LocalStorage.
 
 - **Functions:**
@@ -90,7 +92,6 @@ We created an HTML file for a web page that implements a simple chat interface u
 - **Event Listener:**
   - Attaches an event listener to the "Clear History" button to trigger the `clearHistory` function.
 
-This JavaScript code handles the main functionality of your chat interface, including API interactions, updating the UI, and managing the question history.
 
 > [!NOTE]
 > Keep in mind that the actual API endpoint and key handling should be implemented securely in a production environment.
