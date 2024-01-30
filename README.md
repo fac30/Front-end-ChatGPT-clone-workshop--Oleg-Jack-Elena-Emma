@@ -69,7 +69,7 @@ We created an HTML file for a web page that implements a simple chat interface u
   
 ---
 
-### Explanation of key parts of the JavaScript:
+### More details on key parts of the JavaScript:
 
 The JavaScript code handles the main functionality of your chat interface, including API interactions, updating the UI, and managing the question history.
 
