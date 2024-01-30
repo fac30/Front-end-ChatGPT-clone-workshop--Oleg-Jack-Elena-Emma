@@ -66,6 +66,33 @@ We created an HTML file for a web page that implements a simple chat interface u
 
 8. **Responsiveness:**
    - The page layout is designed to be responsive, adjusting its appearance for smaller screens using media queries.
+  
+Certainly! Let's go into more detail about the `<script>` part of your HTML file. The JavaScript code in this section handles the functionality of your chat interface and interacts with the OpenAI GPT-3.5 API.
+
+---
+
+Explanation of key parts of the script:
+
+- **Global Variables:** `apiKeyValue` and `questionHistory` are global variables to store the API key and question history. They are initialized based on the values stored in LocalStorage.
+
+- **Functions:**
+  - `hideApiForm`: Hides the API form.
+  - `addApiKey`: Adds the API key to LocalStorage and hides the API form.
+  - `deleteApiKey`: Deletes the API key from LocalStorage and shows the API form.
+  - `searchQuestion`: Initiates the search for a user's question, makes an API call, and updates the question history.
+  - `updateQuestionHistory`: Updates the question history and displays it on the UI.
+  - `makeChatGPTApiCall`: Constructs and sends the API call to OpenAI GPT-3.5.
+  - `clearHistory`: Clears the question history from LocalStorage and the UI.
+  - `checkApiKeyStatus`: Checks the status of the API key and adjusts the display accordingly.
+  - `displayQuestionHistory`: Displays the existing question history on the UI.
+
+- **Page Initialization:**
+  - `(function () {...})();`: Immediately invoked function expression (IIFE) to run functions on page load. Calls `checkApiKeyStatus()` and `displayQuestionHistory()`.
+
+- **Event Listener:**
+  - Attaches an event listener to the "Clear History" button to trigger the `clearHistory` function.
+
+This JavaScript code handles the main functionality of your chat interface, including API interactions, updating the UI, and managing the question history.
 
 > [!NOTE]
 > Keep in mind that the actual API endpoint and key handling should be implemented securely in a production environment.
