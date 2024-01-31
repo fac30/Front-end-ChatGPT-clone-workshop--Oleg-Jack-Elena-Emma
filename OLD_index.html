@@ -1,0 +1,182 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+            
+        }
+
+        #apiform {
+            display: none;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 100px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 100px;
+        }
+
+        button {
+            background-color: rgb(110, 210, 110);
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 300px;
+        }
+
+        button:hover {
+            background-color: #ebd990;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result h1 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .result img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            form {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ChatGPT</h1>
+    <form id="apiform" onsubmit="addApiKey(event)">
+        <fieldset>
+            <label for="apiKey">Add your API key:</label>
+            <input type="text" id="apiKey" name="apiKey" required>
+            <button id="apiSubmit" type="submit" onsubmit="saveApi(event)">add apiKey</button>
+        </fieldset>
+    </form>
+    <button onclick="manageApiKey()">Manage API Key</button>
+    <form id="inputform">
+        <fieldset>
+            <label for="chatGPT">Enter your question:</label>
+            <p id="response-placeholder">testing</p>
+            <textarea id="chatGPT" name="question" required></textarea>
+            <button id="button" type="submit">Search</button>
+        </fieldset>
+        <div class="result"></div>
+    </form>
+</body>
+<script>
+    var apiKeyValue = localStorage.getItem('apiKey') || "";
+
+    // Function to hide the API form
+    function hideApiForm() {
+        document.getElementById('apiform').style.display = 'none';
+    }
+
+    function addApiKey(event) {
+        event.preventDefault(); // Prevents the form from submitting in the traditional way
+
+        // Get the API key from the input field
+        apiKeyValue = document.getElementById('apiKey').value;
+
+        // Store the API key in localStorage
+        localStorage.setItem('apiKey', apiKeyValue);
+
+        // Use the API key as needed (e.g., store it, make API calls, etc.)
+
+        console.log("API Key added:", apiKeyValue);
+
+        // Hide the API form after submission
+        hideApiForm();
+    }
+
+    function manageApiKey() {
+            // Remove the API key from localStorage
+            localStorage.removeItem('apiKey');
+
+            // Show the API form
+            document.getElementById('apiform').style.display = 'block';
+        }
+
+    function searchQuestion(event) {
+        event.preventDefault(); // Prevents the form from submitting in the traditional way
+
+        // Get the question from the textarea
+        var question = document.getElementById('chatGPT').value;
+
+        // Use the question as needed (e.g., make API calls, process it, etc.)
+
+        // Display the result (for demonstration purposes, let's log it to the console)
+        console.log("Search Result:", question);
+
+        // You can also update the DOM to display the result in a specific area
+        var resultDiv = document.querySelector('.result');
+        resultDiv.textContent = "Result: " + question;
+    }
+</script>
+<script src="script.js"></script>
+
+</html> -->
