@@ -8,9 +8,7 @@
 
 <br>
 
-**[link to the source code](https://github.com/fac30/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/blob/main/olegs_index.html)**
-
-**[link to the deployed app on github pages](https://fac30.github.io/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/olegs_index.html)**
+**[link to the deployed app on github pages](https://fac30.github.io/Front-end-ChatGPT-clone-workshop--Oleg-Jack-Elena-Emma/index.html)**
 
 ---
 
